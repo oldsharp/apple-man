@@ -771,7 +771,7 @@ make_mandoc_command(const char * path, const char *file) {
 	return NULL;
     }
 
-    char *test_command = my_xsprintf("%s -W unsupp,stop %s 2>&1 >/dev/null",
+    char *test_command = my_xsprintf("%s -W unsupp,stop %s >/dev/null 2>&1",
 	"/usr/bin/mandoc", file);
     int test_status = do_system_command(test_command, 1);
     if (test_status == 0) {
